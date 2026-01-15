@@ -1,0 +1,8 @@
+philosophy_dbt:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: 'c:\Users\utente\PowerBI\Projet_cv\philosophy.duckdb'
+      extensions: 
+        - parquet

@@ -1,0 +1,53 @@
+version: 2
+
+models:
+  - name: dim_schools
+    description: "Dimension table for philosophical schools."
+    columns:
+      - name: school_id
+        description: "Surrogate key for the school."
+        tests:
+          - unique
+          - not_null
+      - name: school_of_thought
+        description: "Name of the philosophical school."
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_author_stats
+    description: "Aggregated statistics per author."
+    columns:
+      - name: author
+        description: "Name of the philosopher."
+        tests:
+          - unique
+          - not_null
+      - name: vocabulary_richness
+        description: "Guiraud Index (Unique / Sqrt(Total)). Measures lexical diversity using Guiraud's formula to adjust for text length."
+      - name: avg_sentiment_score
+        description: "Average sentiment polarity."
+      - name: sentiment_category
+        description: "Optimistic (>0.05), Pessimistic (<-0.05), or Neutral."
+
+  - name: fct_timeline_evolution
+    description: "Timeline of keyword mentions by author and year."
+    columns:
+      - name: author
+        description: "Philosopher name."
+      - name: school_id
+        description: "Foreign key to dim_schools."
+        tests:
+          - relationships:
+              to: ref('dim_schools')
+              field: school_id
+      - name: publication_year
+        description: "Year of publication."
+      - name: god_mentions
+        description: "Count of sentences containing 'god'."
+      - name: reason_mentions
+        description: "Count of sentences containing 'reason'."
+      - name: science_mentions
+        description: "Count of sentences containing 'science'."
+      - name: nature_mentions
+        description: "Count of sentences containing 'nature'."
