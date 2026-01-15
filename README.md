@@ -5,7 +5,7 @@ This project performs data engineering and analysis on a dataset of philosophica
 
 ## Project Overview
 
-[**View Live Power BI Demo**](https://app.powerbi.com/view?r=eyJrIjoiNDljMDQ0ZTEtYjc2YS00ZGI1LWE2NTktNDg0OTQ3NGNiYWVlIiwidCI6IjEyZDZjOWNhLWNmMzItNDRkMi04YmFlLWU2MTFjYmQ2OTQ1OCIsImMiOjl9)
+[**View Live Power BI Demo**]<a href="VOTRE_LIEN_POWER_BI_ICI" target="_blank">➜ Click here to explore the Dashboard</a>
 
 The goal of this project is to analyze philosophical texts, extracting insights such as sentiment polarity, sentence structure, and author statistics across different schools of thought.
 
